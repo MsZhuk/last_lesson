@@ -66,6 +66,7 @@ jobs:
          token: ${{ secrets.TELEGRAM_TOKEN }}
          message: |
             🚀 Success!
+            Test by ${{ github.actor }}
             Repository: ${{ github.repository }}
       - name:  telegram Notification2
         if: failure()
@@ -75,4 +76,5 @@ jobs:
          token: ${{ secrets.TELEGRAM_TOKEN }}
          message: |
             ❌ Faild!
+            Test by ${{ github.actor }}
             Repository: ${{ github.repository }}
