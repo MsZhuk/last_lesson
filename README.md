@@ -37,6 +37,8 @@
 После завершения сборки можно перейти и ознакомится с Allure-отчетом:
 `https://mszhuk.github.io/last_lesson/2/`
 ## 💻Пример Allure-отчета
+![yesy2](https://github.com/user-attachments/assets/86d6a313-453d-4f12-903f-0d4be28e4cee)
+
 ![forlast](https://github.com/user-attachments/assets/173f237e-6560-4fbc-95e0-cea0aedfd4cd)
 
 ## 📩 Уведомления в Telegram с использованием бот
@@ -53,6 +55,8 @@
             🚀 Success!
             Repository: ${{ github.repository }}
 ```
+![1d35d71d-7caf-4e72-ae6f-923bac9d7e60](https://github.com/user-attachments/assets/bdaa3d8c-0430-4542-bfe1-8d931210f9db)
+
 Пример неуспешного прохождения тестов:<br>
 ```javascript
  - name: telegram Notification<br>
