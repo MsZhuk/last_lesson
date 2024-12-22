@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { faker } from "@faker-js/faker";
 import { MainPage, ProductPage, CartPage, MessagePage } from '../src/pages/pagesForAcademy/index.js';
 import * as allure from "allure-js-commons";
+import { UserBuilder } from '../src/pages/pagesForAcademy/builder/builder.js';
 
 const url = 'https://academybugs.com/find-bugs/#';
 const texterror = 'You found a crash bug, examine the page by clicking on any button for 5 seconds.';
@@ -11,13 +11,8 @@ let newComment;
 
 test.describe('Проверка сервиса Academybugs', () => {
   test.beforeEach(async ({ page }) => {
-    newComment = {
-      testcomment : faker.lorem.text(),
-      testauhor : faker.person.firstName(),
-      testemail : faker.internet.email()
-    };
+    newComment = new UserBuilder().addComment().addAuthor().addEmail().generate();
   });
-
 
     test('Смена валюты', async ({ page }) => {
        const mainPage = new MainPage(page);
@@ -40,9 +35,9 @@ test.describe('Проверка сервиса Academybugs', () => {
 
       await mainPage.open(url);
       await mainPage.clickItem();
-      await productPage.addComment(newComment.testcomment);
-      await productPage.addAuthor(newComment.testauhor);
-      await productPage.addEmail(newComment.testemail);
+      await productPage.addComment(newComment.testComment);
+      await productPage.addAuthor(newComment.testAuhor);
+      await productPage.addEmail(newComment.testEmail);
       await productPage.clickSubmit();
       await allure.step("Открытие окна с подробной информацией об ошибке", async () => {
         await expect(await messagePage.message).toContainText(texterror);
@@ -91,6 +86,3 @@ test.describe('Проверка сервиса Academybugs', () => {
 
 
    });
-
-
-
