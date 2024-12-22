@@ -60,7 +60,7 @@ jobs:
           publish_branch: gh-pages
       - name: telegram Notification
         if: success()
-        uses: cbrgm/telegram-github-action@v1
+        uses: appleboy/telegram-action@master
         with:
          to: ${{ secrets.TELEGRAM_CHAT_ID }}
          token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -68,7 +68,7 @@ jobs:
             🚀 Success!
       - name:  telegram Notification2
         if: failure()
-        uses: cbrgm/telegram-github-action@v1
+        uses: appleboy/telegram-action@master
         with:
          to: ${{ secrets.TELEGRAM_CHAT_ID }}
          token: ${{ secrets.TELEGRAM_TOKEN }}
