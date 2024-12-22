@@ -17,8 +17,6 @@ test.describe("API challenge", () => {
       expect(headers).toEqual(
         expect.objectContaining({ "x-challenger": expect.any(String) }),
       );
-  
-      console.log(token);
     });
   
     test("Получить список заданий GET /challenges (200) @GET", async ({ request }) => {
