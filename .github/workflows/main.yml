@@ -66,6 +66,7 @@ jobs:
          token: ${{ secrets.TELEGRAM_TOKEN }}
          message: |
             🚀 Success!
+            Repository: ${{ github.repository }}
       - name:  telegram Notification2
         if: failure()
         uses: appleboy/telegram-action@master
@@ -74,3 +75,4 @@ jobs:
          token: ${{ secrets.TELEGRAM_TOKEN }}
          message: |
             ❌ Faild!
+            Repository: ${{ github.repository }}
