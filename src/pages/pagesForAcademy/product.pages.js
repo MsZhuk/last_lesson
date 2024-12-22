@@ -20,21 +20,21 @@ async changeCurrency () {
     });
 };
  
-async addComment (testcomment) {
+async addComment (testComment) {
     await allure.step("Добавить комментарий", async () => {
-    await this.comment.fill(testcomment);  
+    await this.comment.fill(testComment);  
     });
 };
 
-async addAuthor (testauhor) {
+async addAuthor (testAuhor) {
     await allure.step("Добавить автора", async () => {
-    await this.author.fill(testauhor);   
+    await this.author.fill(testAuhor);   
     });
 };
 
-async addEmail (testemail) {
+async addEmail (testEmail) {
     await allure.step("Добавить email", async () => {
-    await this.email.fill(testemail);   
+    await this.email.fill(testEmail);   
     });
 };
 
