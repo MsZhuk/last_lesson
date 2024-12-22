@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { test, expect } from "@playwright/test";
 
-test.describe.only("API challenge", () => {
+test.describe("API challenge", () => {
     let URL = "https://apichallenges.herokuapp.com/";
     let token;
     let id;
