@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { MainPage, ProductPage, CartPage, MessagePage } from '../src/pages/pagesForAcademy/index.js';
 import * as allure from "allure-js-commons";
-import { UserBuilder } from '../src/pages/pagesForAcademy/builder.js';
+import { UserBuilder } from '../src/builder.js';
 
 const url = 'https://academybugs.com/find-bugs/#';
 const texterror = 'You found a crash bug, examine the page by clicking on any button for 5 seconds.';
