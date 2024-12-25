@@ -4,9 +4,9 @@ export class BasePage {
     constructor (page){
         this.page = page;
     }
-    async open (url){
+    async open (){
         await allure.step ("Открыть страницу", async () => {
-        await this.page.goto(url);
+        await this.page.goto('/');
     });
     }
 }

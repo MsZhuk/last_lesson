@@ -3,7 +3,6 @@ import { MainPage, ProductPage, CartPage, MessagePage } from '../src/pages/pages
 import * as allure from "allure-js-commons";
 import { UserBuilder } from '../src/builder.js';
 
-const url = 'https://academybugs.com/find-bugs/#';
 const texterror = 'You found a crash bug, examine the page by clicking on any button for 5 seconds.';
 const texterror2 = 'You found a crash bug, examine the page for';
 const error404 = '404 Error';
@@ -19,7 +18,7 @@ test.describe('Проверка сервиса Academybugs', () => {
        const productPage = new ProductPage(page);
        const messagePage = new MessagePage(page);
 
-       await mainPage.open(url);
+       await mainPage.open();
        await mainPage.clickItem();
        await productPage.changeCurrency();
        await allure.step("Открытие окна с подробной информацией об ошибке", async () => {
@@ -33,7 +32,7 @@ test.describe('Проверка сервиса Academybugs', () => {
       const productPage = new ProductPage(page);
       const messagePage = new MessagePage(page);
 
-      await mainPage.open(url);
+      await mainPage.open();
       await mainPage.clickItem();
       await productPage.addComment(newComment.testComment);
       await productPage.addAuthor(newComment.testAuhor);
@@ -48,7 +47,7 @@ test.describe('Проверка сервиса Academybugs', () => {
       const mainPage = new MainPage(page);
       const messagePage = new MessagePage(page);
 
-      await mainPage.open(url);
+      await mainPage.open();
       await mainPage.clickPagination ();
       await allure.step("Открытие окна с подробной информацией об ошибке", async () => {
         await expect(await messagePage.messagePagination).toContainText(texterror);
@@ -60,7 +59,7 @@ test.describe('Проверка сервиса Academybugs', () => {
         const productPage = new ProductPage(page);
         const messagePage = new MessagePage(page);
 
-        await mainPage.open(url);
+        await mainPage.open();
         await mainPage.clickItem();
         await productPage.clickManufacturer();
         await allure.step("Переход на страницу с ошибкой 404", async () => {
@@ -74,7 +73,7 @@ test.describe('Проверка сервиса Academybugs', () => {
       const cartPage = new CartPage(page);
       const messagePage = new MessagePage(page);
 
-      await mainPage.open(url);
+      await mainPage.open();
       await mainPage.clickCartIcon();
       await mainPage.clickViewCart();
       await cartPage.clickDeleteButton();
